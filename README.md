@@ -21,7 +21,7 @@ Documentation: http://causalml.readthedocs.io/en/latest/?badge=latest
 It provides a standard interface that allows user to estimate the **Conditional Average Treatment Effect** (CATE) or **Individual Treatment Effect** (ITE) from experimental or observational data.
 Essentially, it estimates the causal impact of intervention **T** on outcome **Y** for users with observed features **X**, without strong assumptions on the model form.
 
-PyPI: [(https://pypi.org/project/causalml/]((https://pypi.org/project/causalml/)
+PyPI: https://pypi.org/project/causalml/
 
 
 Current build status
