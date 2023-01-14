@@ -12,6 +12,8 @@ source:
 
 build:
   number: 0
+  # pytorch doesn't provide a windows build
+  skip: true   # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
