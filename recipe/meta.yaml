@@ -29,7 +29,9 @@ requirements:
     - cython
     - setuptools >=41.0.0
     - numpy
-    - scikit-learn <=1.0.2
+    # out of sync with https://github.com/uber/causalml/blob/3931ccf69dedb7f97c5be3c1b2d3e2fd7bc8b305/requirements.txt#L9
+    # >1.0.2 needed for py3.11 support
+    - scikit-learn <=1.2.2
   run:
     - python
     - setuptools >=41.0.0
@@ -39,7 +41,8 @@ requirements:
     - scipy >=1.4.1
     - matplotlib-base
     - pandas >=0.24.1
-    - scikit-learn <=1.0.2
+    # see above
+    - scikit-learn <=1.2.2
     - statsmodels >=0.9.0
     - seaborn
     - cython >=0.28.0
