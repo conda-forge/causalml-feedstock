@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: 38f44060f9aa254c26a40b2622a9f15bad7f857fcedcee02cac1d4d13b072345
+  sha256: 44145ac0ae13515bfe7e649fce100d197426dcbfd8fb0461ff38839285cdc7f4
 
 build:
   number: 0
   # pytorch doesn't provide a windows build
-  skip: true   # [win]
+  skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -66,7 +66,7 @@ test:
 
 about:
   home: https://causalml.readthedocs.io/en/latest/?badge=latest
-  summary: Causal ML is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms. 
+  summary: Causal ML is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms.
   license: Apache-2.0
   license_file: LICENSE
   description: |
