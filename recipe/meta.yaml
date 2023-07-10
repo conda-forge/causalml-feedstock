@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: 38f44060f9aa254c26a40b2622a9f15bad7f857fcedcee02cac1d4d13b072345
+  sha256: 44145ac0ae13515bfe7e649fce100d197426dcbfd8fb0461ff38839285cdc7f4
 
 build:
   number: 0
   # pytorch doesn't provide a windows build
-  skip: true   # [win]
+  skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,24 +21,24 @@ requirements:
     - {{ compiler('c') }}
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-    - cython  # [build_platform != target_platform]
-    - numpy  # [build_platform != target_platform]
+    - cython >=0.28.0  # [build_platform != target_platform]
+    - numpy <1.24  # [build_platform != target_platform]
   host:
     - pip
     - python
-    - cython
+    - cython >=0.28.0
     - setuptools >=41.0.0
-    - numpy
+    - numpy <1.24
     - scikit-learn <=1.0.2
   run:
     - python
     - setuptools >=41.0.0
-    - numpy
+    - numpy <1.24
     - forestci ==0.6
     - pathos ==0.2.9
     - scipy >=1.4.1
     - matplotlib-base
-    - pandas >=0.24.1
+    - pandas >=0.24.1,<1.4.0
     - scikit-learn <=1.0.2
     - statsmodels >=0.9.0
     - seaborn
@@ -49,7 +49,9 @@ requirements:
     - shap
     - dill
     - lightgbm
-    - pygam
+    # https://github.com/conda-forge/pygam-feedstock/issues/12
+    # this pin is not in the requirements but should be
+    - pygam <0.9.0
     - packaging
     - pytorch
     - pyro-ppl
@@ -66,7 +68,7 @@ test:
 
 about:
   home: https://causalml.readthedocs.io/en/latest/?badge=latest
-  summary: Causal ML is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms. 
+  summary: Causal ML is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms.
   license: Apache-2.0
   license_file: LICENSE
   description: |
