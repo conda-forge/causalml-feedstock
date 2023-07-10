@@ -49,7 +49,9 @@ requirements:
     - shap
     - dill
     - lightgbm
-    - pygam
+    # https://github.com/conda-forge/pygam-feedstock/issues/12
+    # this pin is not in the requirements but should be
+    - pygam <0.9.0
     - packaging
     - pytorch
     - pyro-ppl
