@@ -14,7 +14,7 @@ build:
   number: 0
   # pytorch doesn't provide a windows build
   # pandas<1.4 is not available for Python 3.11
-  skip: true  # [win or py=311]
+  skip: true  # [win or py==311]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
