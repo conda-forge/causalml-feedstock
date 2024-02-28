@@ -11,7 +11,7 @@ source:
   sha256: 026031c1df198756968c43ec39e1993e03533333bade8ed93f655ce6efa07a90
 
 build:
-  number: 0
+  number: 1
   # pytorch doesn't provide a windows build
   # pandas<1.4 is not available for Python 3.11
   skip: true  # [win or py==311]
