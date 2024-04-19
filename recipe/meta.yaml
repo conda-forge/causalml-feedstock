@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.15.0" %}
+{% set version = "0.15.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: 026031c1df198756968c43ec39e1993e03533333bade8ed93f655ce6efa07a90
+  sha256: 99f3cf70cdeb19c6a043c24fe555fc8d1e60d8df8f4567ee6aaf56bc85fc2165
 
 build:
-  number: 1
+  number: 0
   # pytorch doesn't provide a windows build
   # pandas<1.4 is not available for Python 3.11
   skip: true  # [win or py==311]
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
