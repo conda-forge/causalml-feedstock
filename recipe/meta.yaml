@@ -11,10 +11,9 @@ source:
   sha256: 99f3cf70cdeb19c6a043c24fe555fc8d1e60d8df8f4567ee6aaf56bc85fc2165
 
 build:
-  number: 0
+  number: 1
   # pytorch doesn't provide a windows build
-  # pandas<1.4 is not available for Python 3.11
-  skip: true  # [win or py==311]
+  skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -41,11 +40,11 @@ requirements:
     - pathos ==0.2.9
     - scipy >=1.4.1
     - matplotlib-base
-    - pandas >=0.24.1,<1.4.0
+    - pandas >=0.24.1
     - scikit-learn >=0.22
     - statsmodels >=0.9.0
-    - seaborn-base
     - cython <=0.29.34
+    - seaborn-base
     - xgboost
     - pydotplus
     - tqdm
