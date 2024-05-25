@@ -11,7 +11,7 @@ source:
   sha256: 99f3cf70cdeb19c6a043c24fe555fc8d1e60d8df8f4567ee6aaf56bc85fc2165
 
 build:
-  number: 1
+  number: 2
   # pytorch doesn't provide a windows build
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
