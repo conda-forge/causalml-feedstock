@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.15.1" %}
+{% set version = "0.15.2" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: 99f3cf70cdeb19c6a043c24fe555fc8d1e60d8df8f4567ee6aaf56bc85fc2165
+  sha256: f071916bdf120e202e683f235675493ddac6de57e3b679e0b624c99b5a549cf0
 
 build:
-  number: 1
+  number: 0
   # pytorch doesn't provide a windows build
   skip: true  # [win]
   script: {{ PYTHON }} -m pip install . -vv
