@@ -14,7 +14,7 @@ build:
   number: 0
   # pytorch doesn't provide a windows build
   # Not compatible with new Cython releases needed for Python 3.12+.
-  skip: true  # [win or py>312]
+  skip: true  # [win or py>=312]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
