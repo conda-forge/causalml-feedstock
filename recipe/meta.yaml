@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.15.2" %}
+{% set version = "0.15.3" %}
 
 
 package:
@@ -8,13 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: f071916bdf120e202e683f235675493ddac6de57e3b679e0b624c99b5a549cf0
+  sha256: 06921f9859e58a473b46decb48d2f6f64af2e8e1b12f756b3d06371fa3fcc6e1
 
 build:
-  number: 1
-  # pytorch doesn't provide a windows build
-  # Not compatible with new Cython releases needed for Python 3.12+.
-  skip: true  # [win or py>=312]
+  number: 0
+  skip: True
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -29,14 +27,14 @@ requirements:
   host:
     - pip
     - python
-    - cython <=0.29.34
+    - cython
     - setuptools >=41.0.0
     - numpy
     - scikit-learn >=0.22
   run:
     - python
     - setuptools >=41.0.0
-    - numpy <2
+    - numpy
     - forestci ==0.6
     - pathos ==0.2.9
     - scipy >=1.4.1
@@ -44,7 +42,7 @@ requirements:
     - pandas >=0.24.1
     - scikit-learn >=0.22
     - statsmodels >=0.9.0
-    - cython <=0.29.34
+    - cython
     - seaborn-base
     - xgboost
     - pydotplus
@@ -52,10 +50,7 @@ requirements:
     - shap
     - dill
     - lightgbm
-    - pygam
     - packaging
-    - pytorch
-    - pyro-ppl
     - python-graphviz
 
 test:
