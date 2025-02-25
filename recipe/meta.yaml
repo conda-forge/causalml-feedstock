@@ -12,9 +12,7 @@ source:
 
 build:
   number: 0
-  # pytorch doesn't provide a windows build
-  # Not compatible with new Cython releases needed for Python 3.12+.
-  skip: true  # [win or py>=312]
+  skip: False
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -29,14 +27,14 @@ requirements:
   host:
     - pip
     - python
-    - cython <=0.29.34
+    - cython
     - setuptools >=41.0.0
     - numpy
     - scikit-learn >=0.22
   run:
     - python
     - setuptools >=41.0.0
-    - numpy <2
+    - numpy
     - forestci ==0.6
     - pathos ==0.2.9
     - scipy >=1.4.1
@@ -44,7 +42,7 @@ requirements:
     - pandas >=0.24.1
     - scikit-learn >=0.22
     - statsmodels >=0.9.0
-    - cython <=0.29.34
+    - cython
     - seaborn-base
     - xgboost
     - pydotplus
@@ -52,10 +50,7 @@ requirements:
     - shap
     - dill
     - lightgbm
-    - pygam
     - packaging
-    - pytorch
-    - pyro-ppl
     - python-graphviz
 
 test:
