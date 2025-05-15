@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.15.3" %}
+{% set version = "0.15.4" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: 06921f9859e58a473b46decb48d2f6f64af2e8e1b12f756b3d06371fa3fcc6e1
+  sha256: 7f5abb2e883911666e8841b915e1f42a7a963f12fc2aeac78a362672acdf0a14
 
 build:
   number: 0
-  skip: True
+  skip: true
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
