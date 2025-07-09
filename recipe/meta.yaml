@@ -35,7 +35,7 @@ requirements:
     - numpy >=1.18.5,<3
     - forestci ==0.6
     - pathos ==0.2.9
-    - scipy >=1.4.1
+    - scipy >=1.4.1,<1.16.0
     - matplotlib-base
     - pandas >=0.24.1
     - scikit-learn >=1.5.2
