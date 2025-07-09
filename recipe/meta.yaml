@@ -40,7 +40,6 @@ requirements:
     - pandas >=0.24.1
     - scikit-learn >=1.5.2
     - statsmodels >=0.9.0
-    - cython
     - seaborn-base
     - xgboost
     - pydotplus
