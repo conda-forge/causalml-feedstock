@@ -1,5 +1,5 @@
 {% set name = "causalml" %}
-{% set version = "0.15.5" %}
+{% set version = "0.16.0" %}
 
 
 package:
@@ -8,11 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/causalml-{{ version }}.tar.gz
-  sha256: 83aabcd8a7a67013ae45f4e31cb277a9ed2f1bd5a7b024ee7dd23fc2d8573f5b
+  sha256: fb2ea2da2a37c5597b3f292d086f1ed4b1989e9b473577b10724abc90f31b060
 
 build:
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<311]
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
   build:
@@ -22,24 +23,26 @@ requirements:
     - python  # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - cython  # [build_platform != target_platform]
-    - numpy  # [build_platform != target_platform]
+    - numpy >=2  # [build_platform != target_platform]
+    - scikit-learn >=1.6.0  # [build_platform != target_platform]
   host:
     - pip
+    - wheel
     - python
     - cython
-    - setuptools >=41.0.0
-    - numpy
-    - scikit-learn >=0.22
+    - setuptools >=18.0
+    - numpy >=1.18.5
+    - scikit-learn >=1.6.0
   run:
     - python
-    - numpy >=1.18.5,<3
+    - numpy >=1.25.2
     - forestci ==0.6
     - pathos ==0.2.9
-    - scipy >=1.4.1,<1.16.0
+    - scipy >=1.16.0
     - matplotlib-base
     - pandas >=0.24.1
-    - scikit-learn >=1.5.2
-    - statsmodels >=0.9.0
+    - scikit-learn >=1.6.0
+    - statsmodels >=0.14.5
     - seaborn-base
     - xgboost
     - pydotplus
@@ -49,6 +52,7 @@ requirements:
     - lightgbm
     - packaging
     - python-graphviz
+    - black >=26.1.0
 
 test:
   imports:
