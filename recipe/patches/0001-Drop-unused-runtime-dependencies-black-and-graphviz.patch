@@ -1,0 +1,30 @@
+From 46319bedd24f98c1f94248ca48287ed5ca49e730 Mon Sep 17 00:00:00 2001
+From: Pavel Zwerschke <pavelzw@gmail.com>
+Date: Tue, 13 Oct 2026 10:31:21 +0200
+Subject: [PATCH] Drop unused runtime dependencies black and graphviz
+
+Neither package is imported anywhere in causalml. black is a code formatter
+that was added to the runtime dependency list by accident in uber/causalml#844.
+The python graphviz package is not used either: tree plotting goes through
+pydot, which only needs the graphviz 'dot' binary, and the conda-forge pydot
+package already depends on it.
+---
+ pyproject.toml | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index 3f80fce..8a1e86d 100755
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -39,8 +39,6 @@ dependencies = [
+     "dill",
+     "lightgbm",
+     "packaging",
+-    "graphviz",
+-    "black>=26.1.0",
+ ]
+ 
+ [project.optional-dependencies]
+-- 
+2.53.0
+
