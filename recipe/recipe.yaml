@@ -9,6 +9,7 @@ source:
   url: https://files.pythonhosted.org/packages/source/c/causalml/causalml-${{ version }}.tar.gz
   sha256: bb77f22c031c2b62533ce3d1949f1ffd6314c7e87eb70221be7b85ff891499a5
   patches:
+    # https://github.com/uber/causalml/pull/1057
     - patches/0001-Drop-unused-runtime-dependencies-black-and-graphviz.patch
 
 build:
