@@ -3,7 +3,7 @@ About causalml-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/causalml-feedstock/blob/main/LICENSE.txt)
 
-Home: https://causalml.readthedocs.io/en/latest/?badge=latest
+Home: https://github.com/uber/causalml
 
 Package license: Apache-2.0
 
@@ -11,18 +11,13 @@ Summary: Causal ML is a Python package that provides a suite of uplift modeling 
 
 Development: https://github.com/uber/causalml
 
-Documentation: http://causalml.readthedocs.io/en/latest/?badge=latest
-
-<a href="https://github.com/uber/causalml">
-  <img src="https://raw.githubusercontent.com/uber/causalml/master/docs/_static/img/logo/causalml_logo.png" alt="CausalML banner" />
-</a>
+Documentation: https://causalml.readthedocs.io/en/latest/
 
 ``Causal ML`` is a Python package that provides a suite of uplift modeling and causal inference methods using machine learning algorithms based on recent research.
 It provides a standard interface that allows user to estimate the **Conditional Average Treatment Effect** (CATE) or **Individual Treatment Effect** (ITE) from experimental or observational data.
 Essentially, it estimates the causal impact of intervention **T** on outcome **Y** for users with observed features **X**, without strong assumptions on the model form.
 
-PyPI: [(https://pypi.org/project/causalml/]((https://pypi.org/project/causalml/)
-
+PyPI: https://pypi.org/project/causalml/
 
 Current build status
 ====================
