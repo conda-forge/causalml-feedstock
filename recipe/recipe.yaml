@@ -8,6 +8,8 @@ package:
 source:
   url: https://files.pythonhosted.org/packages/source/c/causalml/causalml-${{ version }}.tar.gz
   sha256: bb77f22c031c2b62533ce3d1949f1ffd6314c7e87eb70221be7b85ff891499a5
+  patches:
+    - patches/0001-Drop-unused-runtime-dependencies-black-and-graphviz.patch
 
 build:
   number: 0
@@ -52,11 +54,8 @@ requirements:
     - pydot >=3.0.0
     - tqdm
     - shap
-    - dill
     - lightgbm
     - packaging
-    - python-graphviz
-    - black >=26.1.0
 
 tests:
   - python:
